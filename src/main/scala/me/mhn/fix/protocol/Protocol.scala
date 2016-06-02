@@ -14,19 +14,23 @@ case class Value(value: String) extends Protocol {
   override def toString = value
 }
 
-case class Message(fields: Map[Tag, Field]) extends Protocol {
-  override def toString = ("" /: fields) (_ + _._2)
+case class Message(fields: Field*) extends Protocol {
+  override def toString = ("" /: fields) (_ + _.toString)
 }
 
 object Message {
-  def apply(fields: Field*): Message = Message(fields.toList)
-  def apply(fields: List[Field]): Message = Message(fields.flatMap(f => Map(f.tag -> f)).toMap)
+  def apply(fields: List[Field]): Message = Message(fields:_*)
 }
 
-case class Messages(messages: List[Message]) extends Protocol {
+case class Messages(messages: Message*) extends Protocol {
   override def toString = messages.mkString("\n")
 }
 
 object Messages {
-  def apply(messages: Message*): Messages = Messages(messages.toList)
+  def apply(messages: List[Message]): Messages = Messages(messages:_*)
 }
+
+case class ParseError(message: String) extends Protocol {
+  override def toString = message
+}
+
