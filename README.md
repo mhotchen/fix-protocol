@@ -6,7 +6,11 @@ The library is a grammar definition with some case classes, so is purely for par
 
 ## Installation
 
-TODO: I haven't figured that out yet :)
+Using SBT place the following line in your project's `build.sbt` file:
+
+```scala
+libraryDependencies += "me.mhn" %% "fix-protocol" % "1.0.0"
+```
 
 ## Usage
 
@@ -21,7 +25,7 @@ val fixMessages = (
     "8=FIX.5.2|35=8|58=Blah blah = #!@$%|\n" +
     "8=FIX.5.3|35=8|58=Blah blah = #!@$%|"
   ).replace('|', 1.toChar)
-  
+
 val caseClasses = parser.parse(parser.messages, fixMessages)
 println(caseClasses) // will convert them back to a string so you can verify
 
