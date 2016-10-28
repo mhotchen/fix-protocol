@@ -1,5 +1,7 @@
 # FIX protocol for Scala
 
+![Build status](https://travis-ci.org/mhotchen/fix-protocol.svg?branch=master)
+
 A small library for parsing and working with the [FIX (Financial Information eXchange) protocol](http://www.fixtradingcommunity.org/)
 
 The library is a grammar definition with some case classes, so is purely for parsing and creating FIX message strings. It does not handle field types, validation or generating a checksum.
