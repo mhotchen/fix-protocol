@@ -1,6 +1,6 @@
 # FIX protocol for Scala
 
-![Build status](https://travis-ci.org/mhotchen/fix-protocol.svg?branch=master)
+[![Build Status](https://travis-ci.org/mhotchen/fix-protocol.svg?branch=master)](https://travis-ci.org/mhotchen/fix-protocol)
 
 A small library for parsing and working with the [FIX (Financial Information eXchange) protocol](http://www.fixtradingcommunity.org/)
 
